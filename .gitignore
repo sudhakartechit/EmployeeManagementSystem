@@ -7,3 +7,5 @@
 /EmployeeManagementSystem/EmployeeUnitTest/obj
 /EmployeeManagementSystem/InMemoryDbASPNet6WebAPI/obj
 /.vs
+/EmployeeManagementSystem/EmployeeClientRepository/bin/Debug/net6.0
+/EmployeeManagementSystem/InMemoryDbASPNet6WebAPI/bin/Debug/net6.0

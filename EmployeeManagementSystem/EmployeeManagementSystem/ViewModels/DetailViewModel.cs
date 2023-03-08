@@ -27,11 +27,15 @@ namespace EmployeeManagementSystem.ViewModels
             this.RaisePropertyChanged(nameof(Employees));
         }
 
+        //It's set SelectedEmployee from DetailView
         public Employee SelectedEmployee
         {
             get => selectedEmployee;
             set => this.RaiseAndSetIfChanged(ref selectedEmployee, value);
         }
+
+        // When click Search button binded this method to DetailView
+        // It method will search employees in the Database using ASP.NET IN MEMORY DATABSE 
 
         public async void Search(string searchTerm)
         {

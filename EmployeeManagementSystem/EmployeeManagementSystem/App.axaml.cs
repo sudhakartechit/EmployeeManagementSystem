@@ -14,7 +14,7 @@ namespace EmployeeManagementSystem
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
-            Services=ConfigureServices();
+            Services = ConfigureServices();
         }
 
         public override void OnFrameworkInitializationCompleted()
@@ -31,11 +31,12 @@ namespace EmployeeManagementSystem
 
         public IServiceProvider Services { get; private set; }
 
+        //ConfigureServices here using Microsoft.Extensions.DependencyInjection
         private static IServiceProvider ConfigureServices()
         {
             var services = new ServiceCollection(); ;
             services.AddSingleton<IEmployeeClientRepository, EmployeeClientRepository>();
-            services.AddSingleton<MainWindowViewModel> ();
+            services.AddSingleton<MainWindowViewModel>();
             return services.BuildServiceProvider();
         }
 

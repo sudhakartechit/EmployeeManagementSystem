@@ -15,12 +15,15 @@ namespace EmployeeRepository
 
         public static string BaseURL = @"https://localhost:7127/api/Employee";
 
+
         private HttpClient GetHttpClient()
         {
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             return new HttpClient(clientHandler);
         }
+
+        // This method add employes in in memory database using ASP.NET MVC WEB API
         public async Task<bool> Add(Employee employee)
         {
             JsonContent jsonContent = JsonContent.Create(employee);
@@ -32,6 +35,8 @@ namespace EmployeeRepository
             }
             return false;
         }
+
+        // This method get all employes in  memory database using ASP.NET MVC WEB API
 
         public async Task<IEnumerable<Employee>> GetEmployees()
         {
@@ -47,6 +52,8 @@ namespace EmployeeRepository
 
         }
 
+        // This method get all employes contains searchterm in memory database using ASP.NET MVC WEB API
+
         public async Task<IEnumerable<Employee>> GetEmployees(string search)
         {
 
@@ -61,6 +68,7 @@ namespace EmployeeRepository
 
         }
 
+        // This method get Delete employes in  memory database using ASP.NET MVC WEB API
 
         public async Task<bool> Remove(Employee employee)
         {
@@ -73,7 +81,8 @@ namespace EmployeeRepository
             return false;
         }
 
-        public  async Task<bool> Update(Employee employee)
+        // This method get Update employes in  memory database using ASP.NET MVC WEB API
+        public async Task<bool> Update(Employee employee)
         {
             JsonContent jsonContent = JsonContent.Create(employee);
 

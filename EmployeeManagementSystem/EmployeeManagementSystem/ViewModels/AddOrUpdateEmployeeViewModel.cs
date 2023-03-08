@@ -19,6 +19,7 @@ namespace EmployeeManagementSystem.ViewModels
     {
         private Employee employee;
 
+        // This constrctor getting called for ADD Employee View
         public AddOrUpdateEmployeeViewModel()
         {
             Save = ReactiveCommand.Create(
@@ -41,6 +42,7 @@ namespace EmployeeManagementSystem.ViewModels
 
         }
 
+        // This constrctor getting called for Edit Employee View
         public AddOrUpdateEmployeeViewModel(Employee employee) : this()
         {
             Id = employee.Id;
@@ -68,7 +70,13 @@ namespace EmployeeManagementSystem.ViewModels
         public string Email { get; set; }
         public DateTime DOB { get; set; }
 
+
+        // This ReactiveCommand used for Save button click
+
         public ReactiveCommand<Unit, Employee> Save { get; set; }
+
+        // This ReactiveCommand used for Cancel button click
+
         public ReactiveCommand<Unit, Unit> Cancel { get; set; }
 
         

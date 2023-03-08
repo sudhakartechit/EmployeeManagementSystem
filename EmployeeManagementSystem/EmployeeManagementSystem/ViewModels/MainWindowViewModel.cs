@@ -13,6 +13,9 @@ namespace EmployeeManagementSystem.ViewModels
         ViewModelBase content;
         private readonly IEmployeeClientRepository _employeeRepository;
 
+        // IEmployeeClientRepository Injected in Constrctor ,
+        // IEmployeeClientRepository registered in App.xaml.cs using Microsoft.Extensions.DependencyInjection
+
         public MainWindowViewModel(IEmployeeClientRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
@@ -22,11 +25,16 @@ namespace EmployeeManagementSystem.ViewModels
 
         public DetailViewModel Detail;
 
+        // Content binded with MainWindow , it will navigate to corresponding VIEW
+
         public ViewModelBase Content
         {
             get => content;
             private set => this.RaiseAndSetIfChanged(ref content, value);
         }
+
+        // When click Added button below method get executed
+        // It method will navigate to AddorUpdateView VIEW 
         public async void AddItem()
         {
             var vm = new AddOrUpdateEmployeeViewModel();
@@ -51,6 +59,8 @@ namespace EmployeeManagementSystem.ViewModels
         }
 
 
+        // When click Edit button binded this method to DetailView
+        // It method will update employee to Database using ASP.NET IN MEMORY DATABSE 
 
         public async void EditItem(Employee employee)
         {
@@ -74,6 +84,9 @@ namespace EmployeeManagementSystem.ViewModels
             Content = vm;
 
         }
+
+        // When click Delete button binded this method to DetailView
+        // It method will Delete employee from Database using ASP.NET IN MEMORY DATABSE 
 
         public async void DeleteItem(Employee employee)
         {
