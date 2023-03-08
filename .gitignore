@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/EmployeeManagementSystem/EmployeeClientRepository/obj
+/EmployeeManagementSystem/EmployeeUnitTest/bin/Debug/net6.0
+/EmployeeManagementSystem/EmployeeUnitTest/obj
+/EmployeeManagementSystem/InMemoryDbASPNet6WebAPI/obj
+/.vs

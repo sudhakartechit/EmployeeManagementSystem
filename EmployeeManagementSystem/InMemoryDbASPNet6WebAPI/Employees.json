@@ -1,0 +1,122 @@
+{
+    "Employee": [
+      {
+        "Id": 1,
+        "CompanyName": "Alfreds Futterkiste",
+        "Name": "Maria Anders",
+        "Department": "Sales Representative",
+        "Address": "Obere Str. 57",
+        "City": "Berlin",
+        "PostalCode": "12209",
+        "Country": "Germany",
+        "Phone": "030-0074321",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 2,
+        "CompanyName": "Ana Trujillo Emparedados y helados",
+        "Name": "Ana Trujillo",
+        "Department": "Owner",
+        "Address": "Avda. de la Constitución 2222",
+        "City": "México D.F.",
+        "PostalCode": "5021",
+        "Country": "Mexico",
+        "Phone": "(5) 555-4729",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 3,
+        "CompanyName": "Antonio Moreno Taquería",
+        "Name": "Antonio Moreno",
+        "Department": "Owner",
+        "Address": "Mataderos  2312",
+        "City": "México D.F.",
+        "PostalCode": "5023",
+        "Country": "Mexico",
+        "Phone": "(5) 555-3932",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+
+      },
+      {
+        "Id": 4,
+        "CompanyName": "Around the Horn",
+        "Name": "Thomas Hardy",
+        "Department": "Sales Representative",
+        "Address": "120 Hanover Sq.",
+        "City": "London",
+        "PostalCode": "WA1 1DP",
+        "Country": "UK",
+        "Phone": "(171) 555-7788",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 5,
+        "CompanyName": "Berglunds snabbköp",
+        "Name": "Christina Berglund",
+        "Department": "Order Administrator",
+        "Address": "Berguvsvägen  8",
+        "City": "Luleå",
+        "PostalCode": "S-958 22",
+        "Country": "Sweden",
+        "Phone": "0921-12 34 65",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 6,
+        "CompanyName": "Blauer See Delikatessen",
+        "Name": "Hanna Moos",
+        "Department": "Sales Representative",
+        "Address": "Forsterstr. 57",
+        "City": "Mannheim",
+        "PostalCode": "68306",
+        "Country": "Germany",
+        "Phone": "0621-08460",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 7,
+        "CompanyName": "Blondel père et fils",
+        "Name": "Frédérique Citeaux",
+        "Department": "Marketing Manager",
+        "Address": "24, place Kléber",
+        "City": "Strasbourg",
+        "PostalCode": "67000",
+        "Country": "France",
+        "Phone": "88.60.15.31",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 8,
+        "CompanyName": "Bólido Comidas preparadas",
+        "Name": "Martín Sommer",
+        "Department": "Owner",
+        "Address": "C/ Araquil, 67",
+        "City": "Madrid",
+        "PostalCode": "28023",
+        "Country": "Spain",
+        "Phone": "(91) 555 22 82",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      },
+      {
+        "Id": 9,
+        "CompanyName": "Bon app&apos;",
+        "Name": "Laurence Lebihan",
+        "Department": "Owner",
+        "Address": "12, rue des Bouchers",
+        "City": "Marseille",
+        "PostalCode": "13008",
+        "Country": "France",
+        "Phone": "91.24.45.40",
+        "Email": "test@gmail.com",
+        "DOB": "2019-01-06T17:16:40"
+      }
+    ]
+}

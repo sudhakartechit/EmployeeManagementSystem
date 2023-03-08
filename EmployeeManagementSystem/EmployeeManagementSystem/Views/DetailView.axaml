@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EmployeeManagementSystem.Views.DetailView">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Search" VerticalAlignment="Center" Margin="5"/>
+			<TextBox x:Name="searchText" VerticalAlignment="Center" Margin="5,3" Width="250" Height="25" VerticalContentAlignment="Center"/>
+			<Button x:Name="PesqBtn" Content="Search" Width="75" Height="25" Margin="10,5" VerticalAlignment="Center"
+                    Command="{Binding Search}" CommandParameter="{Binding ElementName=searchText,Path=Text}"/>
+			<Button Width="75" Height="25" Margin="5" Content="Add" Command="{Binding $parent[Window].DataContext.AddItem}" />
+		</StackPanel>
+		<DataGrid AutoGenerateColumns="False" x:Name="master" Grid.Row="1"
+                  Items="{Binding Employees}" SelectedItem="{Binding SelectedEmployee, Mode=TwoWay}">
+			<DataGrid.Columns>
+				
+				<DataGridTextColumn Binding="{Binding Path=Id}" Header="Employee ID" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=DOB}" Header="DOB" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=CompanyName}" Header="Company Name" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=Department}" Header="Department" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=Address}" Header="Address" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=City}" Header="City" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=PostalCode}" Header="Postal Code" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=Country}" Header="Country" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=Phone}" Header="Phone" Width="*" />
+				
+				<DataGridTemplateColumn Width="75">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Command="{Binding $parent[Window].DataContext.EditItem}" Margin="5" CommandParameter="{Binding}">Edit</Button>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+
+				<DataGridTemplateColumn Width="75">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Command="{Binding $parent[Window].DataContext.DeleteItem}" Margin="5" CommandParameter="{Binding}">Delete</Button>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UserControl>
