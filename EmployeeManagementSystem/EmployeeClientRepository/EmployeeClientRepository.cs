@@ -15,25 +15,26 @@ namespace EmployeeRepository
 
         public static string BaseURL = @"https://localhost:7127/api/Employee";
 
-
-        private HttpClient GetHttpClient()
+        public EmployeeClientRepository()
         {
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-            return new HttpClient(clientHandler);
+            HttpClient = new HttpClient(clientHandler);
         }
+
+        public HttpClient HttpClient { get; set; }
 
         // This method add employes in in memory database using ASP.NET MVC WEB API
         public async Task<bool> Add(Employee employee)
         {
             JsonContent jsonContent = JsonContent.Create(employee);
 
-            var response = await GetHttpClient().PostAsync(BaseURL, jsonContent);
+            var response = await HttpClient.PostAsync(BaseURL, jsonContent);
             if(response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
             }
-            return false;
+            return response.IsSuccessStatusCode;
         }
 
         // This method get all employes in  memory database using ASP.NET MVC WEB API
@@ -41,7 +42,7 @@ namespace EmployeeRepository
         public async Task<IEnumerable<Employee>> GetEmployees()
         {
 
-            var resonse = await GetHttpClient().GetAsync(BaseURL);
+            var resonse = await HttpClient.GetAsync(BaseURL);
 
             if(resonse.IsSuccessStatusCode)
             {
@@ -57,7 +58,7 @@ namespace EmployeeRepository
         public async Task<IEnumerable<Employee>> GetEmployees(string search)
         {
 
-            var resonse = await GetHttpClient().GetAsync(BaseURL + "/" + search);
+            var resonse = await HttpClient.GetAsync(BaseURL + "/" + search);
 
             if (resonse.IsSuccessStatusCode)
             {
@@ -72,13 +73,13 @@ namespace EmployeeRepository
 
         public async Task<bool> Remove(Employee employee)
         {
-            var resonse = await GetHttpClient().DeleteAsync(BaseURL +"/"+ employee.Id);
+            var resonse = await HttpClient.DeleteAsync(BaseURL +"/"+ employee.Id);
 
             if (resonse.IsSuccessStatusCode)
             {
                 var content = await resonse.Content.ReadAsStringAsync();
             }
-            return false;
+            return resonse.IsSuccessStatusCode;
         }
 
         // This method get Update employes in  memory database using ASP.NET MVC WEB API
@@ -86,12 +87,12 @@ namespace EmployeeRepository
         {
             JsonContent jsonContent = JsonContent.Create(employee);
 
-            var response = await GetHttpClient().PutAsync(BaseURL + "/" + employee.Id, jsonContent);
+            var response = await HttpClient.PutAsync(BaseURL + "/" + employee.Id, jsonContent);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
             }
-            return false;
+            return response.IsSuccessStatusCode;
         }
     }
 }
